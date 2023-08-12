@@ -1,4 +1,4 @@
-# React Native TVMaze App
+# React Native TVMaze App 
 
 This is a React Native App to show information about TV series. The data are fetch from [TVMaze API](https://www.tvmaze.com/api).
 
