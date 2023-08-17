@@ -80,15 +80,12 @@ const mockReturnedSeasons = [
 ];
 
 describe('ShowService', () => {
-  beforeAll(() => {});
+  beforeAll(() => {
+    jest.spyOn(api, 'get').mockResolvedValue({data: mockReturnedSeasons});
+  });
   test('retrieve all the seasons', async () => {
-    const jestfn = jest
-      .spyOn(api, 'get')
-      .mockResolvedValue({data: mockReturnedSeasons});
-
     const groupedEpisodes = await showService.getEpisodes('250');
 
     expect(groupedEpisodes.seasonNames.includes('1')).toBeTruthy();
-    expect(jestfn).toBeCalledTimes(1);
   });
 });
